@@ -31,5 +31,6 @@ for (let i=0; i < pokemonList.length; i++){
         document.write(' -Wow! That\'s big!' + '<br>')
     } else {
         document.write( '<br>');
+    //Condition for pokemon who are taller than 1.9
     }
   }
