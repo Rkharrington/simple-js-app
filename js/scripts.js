@@ -25,8 +25,9 @@ let pokemonList = [
     }
 ];
 
-let pokemon = ['Bulbasaur', 'Charizard', 'Weedle', 'Pidgetto', 'Ekans'];
-
-for(let i = 0; i < pokemon.length; i++) {
-    document.write(pokemon[i] + '<br>')
-}
+for (let i=0; i < pokemonList.length; i++){
+    document.write(pokemonList[i].name + ' (height ' + pokemonList[i].height + ') ' + '<br>')
+    if (pokemonList[i].height > 1.9){
+        document.write(' -Wow! That\'s big!')
+    }
+  }
