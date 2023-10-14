@@ -22,11 +22,11 @@ let pokemonList = [
     { name: 'Ekans',
     height: 2,
     type: ['poison']
-}
+    }
 ];
 
 let pokemon = ['Bulbasaur', 'Charizard', 'Weedle', 'Pidgetto', 'Ekans'];
 
 for(let i = 0; i < pokemon.length; i++) {
-    console.log(pokemon[i])
+    document.write(pokemon[i] + '<br>')
 }
