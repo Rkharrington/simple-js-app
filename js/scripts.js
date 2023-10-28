@@ -2,22 +2,22 @@ let pokemonList = [
     { 
         name: 'Bulbasaur',
         height: 0.7,
-        type: ['grass', ' poison']
+        type: ['grass', 'poison']
     },
     { 
         name: 'Charizard',
         height: 1.7,
-        type: ['fire', ' flying']
+        type: ['fire', 'flying']
     },
     { 
         name: 'Weedle',
         height: 0.3,
-        type: ['bug', ' poison']
+        type: ['bug', 'poison']
     },
     { 
         name: 'Pidgetto',
         height: 1.1,
-        type: ['flying', ' normal']
+        type: ['flying', 'normal']
     },
     { name: 'Ekans',
     height: 2,
@@ -25,7 +25,12 @@ let pokemonList = [
     }
 ];
 
-function myLoopFunction(pokemonList) {
-    document.write('<p>' + pokemonList.name + ' (height: ' + pokemonList.height + ' type: ' + pokemonList.type + ')' + '</p>');
+for (let i=0; i < pokemonList.length; i++){
+    document.write(pokemonList[i].name + ' (height ' + pokemonList[i].height + ') ')
+    if (pokemonList[i].height > 1.9){
+        document.write(' -Wow! That\'s big!' + '<br>')
+    } else {
+        document.write( '<br>');
+    //Condition for pokemon who are taller than 1.9
+    }
   }
-  pokemonList.forEach (myLoopFunction);
