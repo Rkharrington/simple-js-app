@@ -3,7 +3,7 @@ Colors used
 background color: #FFFD99
 text color: #282A3E
 primary color:
-secondary color: 
+secondary color: #1B998B
 */
 
 body {
@@ -18,4 +18,21 @@ body {
 h1 {
     font-size: 30px;
     font-weight: 700;
+}
+
+.button-class {
+    background-color: #1B998B;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: white;
+    color: #282A3E;
+    border: 2px solid #1B998B;
 }
