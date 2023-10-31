@@ -13,6 +13,10 @@ body {
     font-weight: 400;
     font-size: 16px;
     line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 h1 {
@@ -21,9 +25,9 @@ h1 {
 }
 
 .button-class {
-    background-color: #1B998B;
-    border: none;
-    color: white;
+    background-color: white;
+    font-family: 'Rajdhani' , sans-serif;
+    color: #282A3E;
     padding: 16px 32px;
     text-align: center;
     text-decoration: none;
@@ -32,8 +36,6 @@ h1 {
     margin: 4px 2px;
     transition-duration: 0.4s;
     cursor: pointer;
-    background-color: white;
-    color: #282A3E;
     border: 2px solid #1B998B;
 }
 
