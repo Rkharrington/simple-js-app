@@ -40,3 +40,23 @@ h1 {
 .pokemon-list {
     list-style: none;
 }
+
+/* Media query for mobile devices */
+@media screen and (min-width: 480px) {
+
+}
+
+/* Media query for tablets */
+@media screen and (min-width: 768px) {
+
+}
+
+/* Media query for laptops, small screens */
+@media screen and (min-width: 992px) {
+
+}
+
+/* Media query for desktops, large screens */
+@media screen and (min-width: 1200px) {
+
+}
