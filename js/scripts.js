@@ -29,6 +29,10 @@ let pokemonRepository = (function () {
     function add(pokemon) {
         pokemonList.push(pokemon);
       }
+    
+    function showDetails(pokemon) {
+      console.log(pokemon.name + ' is ' + pokemon.height + ' tall and is a ' + pokemon.type + ' type.');
+    }
   
     function getAll() {
       return pokemonList;
@@ -41,7 +45,7 @@ let pokemonRepository = (function () {
       button.classList.add('button-class');
       listpokemon.appendChild(button);
       pokemonList.appendChild(listpokemon);
-      button.addEventListener('click', function (){
+      button.addEventListener('click',() => {
         showDetails(pokemon);
       })
     }
