@@ -3,7 +3,15 @@ let pokemonRepository = (function () {
   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
   function add(pokemon) {
+    if (
+      typeof pokemon === 'object' &&
+      'name' in pokemon &&
+      'detailsUrl' in pokemon
+    ) {
       pokemonList.push(pokemon);
+  } else {
+    console.log('This Pokémon is not correct');
+  }
     }
 
   function showDetails(pokemon) {
@@ -38,7 +46,7 @@ let pokemonRepository = (function () {
           detailsUrl: item.url
         };
         add(pokemon);
-        console.log(pokemon);
+        console.log(pokemon); // logs full list on console
       });
     }).catch(function (e) {
       console.error(e);
@@ -50,7 +58,7 @@ let pokemonRepository = (function () {
     return fetch(url).then(function (response) {
       return response.json();
     }).then (function (details) {
-      // Add details to the item here
+      // Add item details here
       item.imageUrl = details.sprites.front_default;
       item.height = details.height;
       item.types = details.types;
