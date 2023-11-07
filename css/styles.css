@@ -19,10 +19,31 @@ body {
     align-items: center;
 }
 
-h1 {
-    font-size: 30px;
-    font-weight: 700;
+#modal-container {
+    display: none;
 }
+
+#modal-container.is-visible {
+    position: fixed;
+    padding: 20px;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+
+    /* To show modal above other content */
+    z-index: 999;
+
+    /* To allow scrolling if the screen is not high enough */
+    overflow: auto;
+
+    /* Center the modal */
+    display: grid;
+    text-align: center;
+}
+
 
 .button-class {
     background-color: white;
