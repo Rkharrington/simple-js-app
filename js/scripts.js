@@ -15,8 +15,8 @@ let pokemonRepository = (function () {
     }
 
   function showDetails(pokemon) {
-    loadDetails (pokemon).then(function () {
-      console.log(pokemon);
+    loadDetails(pokemon).then(function () {
+      showModal(pokemon);
     });
   }
 
@@ -46,7 +46,6 @@ let pokemonRepository = (function () {
           detailsUrl: item.url
         };
         add(pokemon);
-        console.log(pokemon); // logs full list on console
       });
     }).catch(function (e) {
       console.error(e);
@@ -61,12 +60,65 @@ let pokemonRepository = (function () {
       // Add item details here
       item.imageUrl = details.sprites.front_default;
       item.height = details.height;
-      item.types = details.types;
+      item.weight = details.weight;
     }).catch(function (e) {
       console.error(e);
     });
   }
+  
+  let modalContainer = document.querySelector('#modal-container');
 
+  function showModal(pokemon) {
+    modalContainer.innerHTML = '';
+
+    let modal = document.createElement('div');
+    modal.classList.add('modal');
+
+    // Add the new modal content
+    let closeButtonElement = document.createElement('button');
+    closeButtonElement.classList.add('modal-close');
+    closeButtonElement.innerText = 'Close';
+    closeButtonElement.addEventListener('click', hideModal);
+
+    let titleElement = document.createElement('h1');
+    titleElement.innerText = pokemon.name;
+
+    let contentHeight = document.createElement('p');
+    contentHeight.innerText = "Height: " + pokemon.height;
+
+    let contentWeight = document.createElement('p');
+    contentWeight.innerText = "Weight: " + pokemon.weight;
+
+    let myImage = document.createElement('img');
+    myImage.src = pokemon.imageUrl;
+    
+    modal.appendChild(closeButtonElement);
+    modal.appendChild(titleElement);
+    modal.appendChild(myImage);
+    modal.appendChild(contentHeight);
+    modal.appendChild(contentWeight);
+    modalContainer.appendChild(modal);
+
+    modalContainer.classList.add('is-visible');
+  }
+
+  function hideModal() {
+    modalContainer.classList.remove('is-visible');
+  }
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
+      hideModal();
+    }
+  });
+
+  modalContainer.addEventListener('click', (e) => {
+    // Close container only when user clicks directly on the overlay
+    let target = e.target;
+    if (target === modalContainer) {
+      hideModal();
+    }
+  });
   return {
     add: add,
     getAll: getAll,
