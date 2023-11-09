@@ -23,6 +23,8 @@ let pokemonRepository = (function () {
   function getAll() {
     return pokemonList;
   }
+
+  // Adds list of buttons
   function addListItem(pokemon){
     let pokemonList = document.querySelector('.pokemon-list');
     let listpokemon = document.createElement('li');
@@ -36,6 +38,7 @@ let pokemonRepository = (function () {
     })
   }
 
+  // Fetch data from Pokemon API
   function loadList() {
     return fetch(apiUrl).then(function (response) {
       return response.json();
@@ -57,7 +60,7 @@ let pokemonRepository = (function () {
     return fetch(url).then(function (response) {
       return response.json();
     }).then (function (details) {
-      // Add item details here
+      // Item details
       item.imageUrl = details.sprites.front_default;
       item.height = details.height;
       item.weight = details.weight;
@@ -68,13 +71,14 @@ let pokemonRepository = (function () {
   
   let modalContainer = document.querySelector('#modal-container');
 
+  // Clears all existing modal content
   function showModal(pokemon) {
     modalContainer.innerHTML = '';
 
     let modal = document.createElement('div');
     modal.classList.add('modal');
 
-    // Add the new modal content
+    // Modal content
     let closeButtonElement = document.createElement('button');
     closeButtonElement.classList.add('modal-close');
     closeButtonElement.innerText = 'Close';
@@ -113,12 +117,15 @@ let pokemonRepository = (function () {
   });
 
   modalContainer.addEventListener('click', (e) => {
+
     // Close container only when user clicks directly on the overlay
     let target = e.target;
     if (target === modalContainer) {
       hideModal();
     }
   });
+
+  // Return statement
   return {
     add: add,
     getAll: getAll,
