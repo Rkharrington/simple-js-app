@@ -83,7 +83,7 @@ h1 {
 
 }
 
-.button-class {
+.btn-primary {
     background-color: #E5E1EE;
     border: 2px solid #9368B7;
     box-sizing: border-box;
@@ -100,7 +100,7 @@ h1 {
     width: 200px;
 }
 
-.button-class:hover {
+.btn-class:hover {
     background-color: #68EDC6;
     color: #000
 }
